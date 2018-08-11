@@ -115,7 +115,11 @@ var map = new ol.Map({
 var source = smallScalePoints.getSource();
 var onChangeKey = source.on('change', function() {
   if (source.getState() == 'ready') {
-    source.unByKey(onChangeKey);
-    map.getView().fitExtent(source.getExtent(), map.getSize());
+    ol.Observable.unByKey(onChangeKey);
+    map.getView().fit(source.getExtent(), {
+    size: map.getSize(),
+    padding: [10, 10, 10, 10],
+    maxZoom: 8
+    });
   }
 });
