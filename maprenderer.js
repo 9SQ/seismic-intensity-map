@@ -2,7 +2,7 @@
 var styles = {
     'epicenter': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
-            scale: 0.5,
+            scale: 0.9,
             src: 'images/epicenter.png'
         }))
     })],
@@ -30,31 +30,31 @@ var styles = {
             src: 'images/int4.png'
         }))
     })],
-    '5': [new ol.style.Style({
+    '5-': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
             scale: 0.5,
             src: 'images/int5l.png'
         }))
     })],
-    '6': [new ol.style.Style({
+    '5+': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
             scale: 0.5,
             src: 'images/int5h.png'
         }))
     })],
-    '7': [new ol.style.Style({
+    '6-': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
             scale: 0.5,
             src: 'images/int6l.png'
         }))
     })],
-    '8': [new ol.style.Style({
+    '6+': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
             scale: 0.5,
             src: 'images/int6h.png'
         }))
     })],
-    '9': [new ol.style.Style({
+    '7': [new ol.style.Style({
         image: new ol.style.Icon( /** @type {olx.style.IconOptions} */ ({
             scale: 0.5,
             src: 'images/int7.png'
@@ -114,12 +114,12 @@ var map = new ol.Map({
 //広域ポイント(細分区分)から最適なズームレベルと中心座標を設定
 var source = smallScalePoints.getSource();
 var onChangeKey = source.on('change', function() {
-  if (source.getState() == 'ready') {
-    ol.Observable.unByKey(onChangeKey);
-    map.getView().fit(source.getExtent(), {
-    size: map.getSize(),
-    padding: [10, 10, 10, 10],
-    maxZoom: 8
-    });
-  }
+    if (source.getState() == 'ready') {
+        ol.Observable.unByKey(onChangeKey);
+        map.getView().fit(source.getExtent(), {
+            size: map.getSize(),
+            padding: [10, 10, 10, 10],
+            maxZoom: 8
+        });
+    }
 });
