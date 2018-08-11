@@ -21,4 +21,4 @@ Seismic Intensity Map Rendering using Earthquake Information from JMA(Japan Mete
 * largeScalePoints.json : サンプルGeoJSON
 * smallScalePoints.json : サンプルGeoJSON
 
-GeoJSON (2015年5月30日 20:24分頃に小笠原諸島西方沖で発生した最大震度5強の地震のXML電文から生成したもの) をサンプルとして含めているので、viewer.htmlで表示を確認できます。
+GeoJSON (2016年04月16日 01時25分頃に熊本県熊本地方で発生した最大震度7の地震のXML電文から生成したもの) をサンプルとして含めているので、viewer.htmlで表示を確認できます。
